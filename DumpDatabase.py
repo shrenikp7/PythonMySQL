@@ -17,7 +17,6 @@ USER = 'username'
 CODE = 'code'
 SOCKET ='/mysql/<db_name>/data/<db_name>.sock'
 DBLIST = '/mysql/admin/scripts/dblist.txt'
-DB_NAME = 'test'
 BKUPLOC = '/mysql/backup/dump/'
 TIMESTAMP = time.strftime('%Y%b%d-%H%M%S')
 BKUDIR = BKUPLOC + TIMESTAMP
@@ -42,8 +41,8 @@ except:
 
 # Code for checking if you want to take single database backup or assigned multiple backups in DB_NAME.
 print "checking for databases names file."
-if os.path.exists(DB_NAME):
-    file1 = open(DB_NAME)
+if os.path.exists(DBLIST):
+    file1 = open(DBLIST)
     multi = 1
     print "Databases file found..."
     print "Starting backup of all dbs listed in file " + DB_NAME
@@ -54,11 +53,11 @@ else:
 
 # Starting actual database backup process.
 if multi:
-   in_file = open(DB_NAME,"r")
+   in_file = open(DBLIST,"r")
    flength = len(in_file.readlines())
    in_file.close()
    p = 1
-   dbfile = open(DB_NAME,"r")
+   dbfile = open(DBLIST,"r")
 
    while p <= flength:
        db = dbfile.readline()   # reading database name from file
