@@ -1,1 +1,1 @@
-# PythonMySQL has script use to manage mysql community edition, and MySQL Community Edition.
+# PythonMySQL has scripts are used to manage MySQL community edition, and MySQL Community Edition.
