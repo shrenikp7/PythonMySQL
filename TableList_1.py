@@ -1,7 +1,3 @@
-/* Hide the published date, author, category, and author box on downloads archive page */
-.post-type-archive-download .entry-meta {display:none;}
-.post-type-archive-download .author-box {display:none;}
-
 #!/usr/bin/python
 
 ####
